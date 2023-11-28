@@ -28,7 +28,7 @@ RankingInfo _$RankingInfoFromJson(Map<String, dynamic> json) => $checkedCreate(
                   : Personalization.fromJson(v as Map<String, dynamic>)),
           nbExactWords: $checkedConvert('nbExactWords', (v) => v as int),
           nbTypos: $checkedConvert('nbTypos', (v) => v as int),
-          promoted: $checkedConvert('promoted', (v) => v as bool),
+          promoted: $checkedConvert('promoted', (v) => v as bool?),
           proximityDistance:
               $checkedConvert('proximityDistance', (v) => v as int?),
           userScore: $checkedConvert('userScore', (v) => v as int),
@@ -58,7 +58,7 @@ Map<String, dynamic> _$RankingInfoToJson(RankingInfo instance) {
   writeNotNull('personalization', instance.personalization?.toJson());
   val['nbExactWords'] = instance.nbExactWords;
   val['nbTypos'] = instance.nbTypos;
-  val['promoted'] = instance.promoted;
+  writeNotNull('promoted', instance.promoted);
   writeNotNull('proximityDistance', instance.proximityDistance);
   val['userScore'] = instance.userScore;
   val['words'] = instance.words;

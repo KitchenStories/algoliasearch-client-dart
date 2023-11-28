@@ -19,7 +19,7 @@ final class RankingInfo {
     this.personalization,
     required this.nbExactWords,
     required this.nbTypos,
-    required this.promoted,
+    this.promoted,
     this.proximityDistance,
     required this.userScore,
     required this.words,
@@ -58,7 +58,7 @@ final class RankingInfo {
 
   /// Present and set to true if a Rule promoted the hit.
   @JsonKey(name: r'promoted')
-  final bool promoted;
+  final bool? promoted;
 
   /// When the query contains more than one word, the sum of the distances between matched words (in meters).
   @JsonKey(name: r'proximityDistance')
